@@ -1,0 +1,39 @@
+<form [formGroup]="courseForm" (ngSubmit)="(onSubmit())" >
+    <div>
+        <label >Title</label>
+        <input type="text" id="title" formControlName="title" >
+        <div *ngIf="courseForm.controls['title'].invalid && courseForm.controls['title'].touched" class="error-msg">
+            <div *ngIf="courseForm.controls['title'].hasError('required')">title is Required</div>
+            <div *ngIf="courseForm.controls['title'].hasError('minlength')">title is small</div>
+        </div>
+    </div>
+    <div>
+        <label >Description</label>
+        <input type="text" id="description" formControlName="description">
+        <div *ngIf="courseForm.controls['description'].invalid && courseForm.controls['description'].touched" class="error-msg">
+            <div *ngIf="courseForm.controls['description'].hasError('required')">description is Required</div>
+            <div *ngIf="courseForm.controls['description'].hasError('minlength')">description is small</div>
+        </div>
+    </div>
+    <div>
+        <label >Image</label>
+        <input type="file" (change)="onFileChange($event)">
+    </div>
+    <button type="submit" id="submit" >Submit</button>
+</form>
+
+
+
+<div class="row col mt-3">
+    @for(course of courses;track $index){
+        <div class="col-lg-4">
+            
+            <app-courses [course]="course" [isDelete]="true"(del)="deleteCourse($event)"></app-courses></div>
+        
+    }@empty {
+        <div align="center">
+            No Course added yet
+        </div>
+    }
+
+</div>

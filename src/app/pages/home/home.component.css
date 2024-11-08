@@ -1,0 +1,21 @@
+img{
+    width: 100%;
+    height: 100vh;
+    
+}
+.content{
+    position: absolute;
+    top: 49%;
+    left:30%;
+    color:whitesmoke;
+}
+.sec{
+    text-align: center;
+    padding: 6vh;
+    background-color: #effeff;
+}
+.col-lg-4{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

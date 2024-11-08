@@ -1,0 +1,19 @@
+
+<section>
+    <img src="img/download.jpeg" alt="">
+    <div class="content">
+        <h1>explaore amazing content !</h1>
+        <a class="btn btn-lg btn-secondary ms-5 mt-2">courses</a>
+        <a class="btn btn-lg btn-primary ms-5 mt-2">templates</a>
+    </div>
+</section>
+<section class="sec">
+    <div id="container">
+        <h1>All Courses</h1>
+        <div class="row mt-5"></div>
+        @for(course of courses;track $index){
+            <div class="col-lg-4 mb-4"><app-courses [course]="course"></app-courses></div>
+        }
+    </div>
+  
+</section>
